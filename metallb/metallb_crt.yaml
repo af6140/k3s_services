@@ -1,0 +1,15 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: metallb
+  namespace: kube-system
+spec:
+  chart: stable/metallb
+  targetNamespace: metallb
+  valuesContent: |-
+    configInline:
+      address-pools:
+      - name: lan-ip-space
+        protocol: layer2
+        addresses:
+          - 192.168.86.220-192.168.86.250

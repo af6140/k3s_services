@@ -1,0 +1,15 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: jenkins
+  namespace: kube-system
+spec:
+  chart: stable/jenkins
+  targetNamespace: jenkins
+  valuesContent: |-
+    master:
+      adminUser: admin
+      adminPassword: admin
+      servicePort: 9080
+    persistence:
+      storageClass: local-path

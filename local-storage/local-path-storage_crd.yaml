@@ -1,0 +1,12 @@
+
+---
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: local-path-storage
+  namespace: kube-system
+spec:
+  chart: https://%{KUBERNETES_API}%/static/charts/local-path-provisioner-0.0.11.tgz
+  targetNamespace: local-path-storage
+  valuesContent: |-
+    replicaCount: 1
