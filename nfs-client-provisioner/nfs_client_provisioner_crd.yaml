@@ -1,0 +1,12 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
+metadata:
+  name: nfs-client-provisioner
+  namespace: kube-system
+spec:
+  chart: stable/nfs-client-provisioner
+  targetNamespace: nfs-client-provisioner
+  valuesContent: |-
+    nfs:
+      server: 192.168.86.64
+      path: /nfs_volume
