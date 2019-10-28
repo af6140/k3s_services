@@ -12,4 +12,4 @@ spec:
       adminPassword: admin
       servicePort: 9080
     persistence:
-      storageClass: local-path
+      storageClass: nfs-client
