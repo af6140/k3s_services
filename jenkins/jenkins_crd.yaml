@@ -13,3 +13,4 @@ spec:
       servicePort: 9080
     persistence:
       storageClass: nfs-client
+    loadBalancerIP: 192.168.86.221
